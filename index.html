@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Doris Lu · Social Marketing Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Noto+Sans+TC:wght@300;400;500;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════
+   PALETTE
+   --white   純白  背景主色
+   --cream   米白  輔助背景
+   --sand    沙色  區塊色
+   --stone   石灰  深一階區塊
+   --brown   焦糖褐  取代黑色 文字/Hero
+   --mid     中灰棕  次要文字
+   --soft    淺灰  輔助文字
+   --gold    金黃  強調色
+   --gold-lt 淺金  金色淡版
+   --gold-bg 金底  Award區底
+══════════════════════════════════ */
+:root{
+  --white:   #FFFFFF;
+  --cream:   #F8F5F0;
+  --sand:    #EDE8E0;
+  --stone:   #E0D8CC;
+  --brown:   #3D3228;
+  --brown2:  #5C4D3E;
+  --mid:     #7A6E63;
+  --soft:    #AEA69C;
+  --gold:    #B8922A;
+  --gold-lt: #D4AD50;
+  --gold-bg: #FAF4E6;
+  --border:  #D8D0C4;
+  --border-lt: #EAE4DC;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'DM Sans','Noto Sans TC',sans-serif;
+  background:var(--white);
+  color:var(--brown);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-thumb{background:var(--gold)}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  height:62px;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 60px;
+  background:rgba(255,255,255,0.93);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border-lt);
+}
+.nav-logo{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.1rem;font-weight:700;
+  letter-spacing:3px;text-transform:uppercase;
+  color:var(--brown);
+}
+.nav-logo span{color:var(--gold)}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{
+  text-decoration:none;font-size:0.7rem;font-weight:500;
+  letter-spacing:1.8px;text-transform:uppercase;
+  color:var(--soft);transition:color .2s;
+}
+.nav-links a:hover{color:var(--gold)}
+.lang-toggle{
+  display:flex;
+  border:1px solid var(--border);
+  border-radius:2px;overflow:hidden;
+}
+.lang-btn{
+  padding:6px 14px;font-size:0.68rem;font-weight:600;
+  letter-spacing:1px;background:none;border:none;
+  color:var(--soft);cursor:pointer;transition:all .2s;
+}
+.lang-btn.active{background:var(--brown);color:var(--white)}
+
+/* ════════════════════════════
+   HERO  — 底色用深焦糖褐取代黑
+════════════════════════════ */
+.hero{
+  padding-top:62px;
+  min-height:60vh;
+  display:block;
+}
+
+/* 左欄：深褐底 */
+.hero-left{
+  background:var(--brown);
+  padding:80px 60px;
+  display:flex;flex-direction:column;justify-content:center;
+  position:relative;overflow:hidden;
+  min-height:60vh;
+}
+/* 裝飾性光暈 */
+.hero-left::before{
+  content:'';position:absolute;
+  top:-100px;right:-100px;
+  width:400px;height:400px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(184,146,42,0.12) 0%,transparent 65%);
+  pointer-events:none;
+}
+.hero-left::after{
+  content:'';position:absolute;
+  bottom:-80px;left:-80px;
+  width:300px;height:300px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(184,146,42,0.08) 0%,transparent 65%);
+  pointer-events:none;
+}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  border:1px solid rgba(184,146,42,0.35);
+  color:var(--gold-lt);
+  font-size:0.65rem;letter-spacing:3px;text-transform:uppercase;
+  padding:6px 16px;border-radius:2px;
+  margin-bottom:36px;width:fit-content;
+}
+.hero-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(3.5rem,5.5vw,6rem);
+  font-weight:700;line-height:0.95;letter-spacing:-1px;
+  color:#FFF8F0;
+  margin-bottom:8px;
+}
+.hero-name-zh{
+  font-family:'Noto Sans TC',sans-serif;
+  font-size:1.15rem;font-weight:300;
+  color:rgba(255,240,210,0.4);
+  letter-spacing:8px;margin-bottom:40px;
+}
+.hero-desc{
+  font-size:0.88rem;line-height:1.9;
+  color:rgba(255,240,210,0.6);
+  max-width:380px;margin-bottom:52px;
+  padding-left:20px;
+  border-left:2px solid var(--gold);
+}
+.hero-stats{display:flex;gap:44px}
+.hero-stat-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:2.2rem;font-weight:700;
+  color:var(--gold-lt);line-height:1;
+}
+.hero-stat-lbl{
+  font-size:0.62rem;color:rgba(255,240,210,0.4);
+  letter-spacing:1px;margin-top:4px;
+}
+
+/* 右欄：米白底 */
+.hero-right{
+  background:var(--cream);
+  padding:80px 56px;
+  display:flex;flex-direction:column;justify-content:center;
+  border-left:1px solid var(--border);
+}
+.profile-chips{display:flex;flex-direction:column;gap:14px}
+.chip{
+  display:flex;align-items:flex-start;gap:14px;
+  background:var(--white);
+  padding:18px 20px;
+  border:1px solid var(--border-lt);
+  border-left:3px solid var(--gold);
+  transition:border-color .2s,box-shadow .2s;
+}
+.chip:hover{box-shadow:0 4px 20px rgba(184,146,42,0.1)}
+.chip-icon{font-size:1.25rem;flex-shrink:0;margin-top:1px}
+.chip-zh{font-size:0.85rem;font-weight:600;color:var(--brown);margin-bottom:2px}
+.chip-en{font-size:0.7rem;color:var(--soft)}
+
+/* ════════════════════════════
+   SECTION SHELL
+════════════════════════════ */
+.section{padding:88px 60px}
+.section.bg-cream{background:var(--cream)}
+.section.bg-sand{background:var(--sand)}
+.section.bg-gold-tint{background:var(--gold-bg)}
+.section.bg-stone{background:var(--stone)}
+
+.sec-eyebrow{
+  font-size:0.62rem;letter-spacing:4px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:10px;
+  display:flex;align-items:center;gap:12px;
+}
+.sec-eyebrow::before{content:'';display:block;width:20px;height:1px;background:var(--gold)}
+.sec-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2rem,3.5vw,2.8rem);
+  font-weight:700;line-height:1.1;color:var(--brown);
+  margin-bottom:4px;
+}
+.sec-sub{
+  font-size:0.82rem;color:var(--soft);
+  letter-spacing:.5px;margin-bottom:52px;
+}
+/* 褐底區的文字顏色 */
+.on-brown .sec-eyebrow{color:var(--gold-lt)}
+.on-brown .sec-eyebrow::before{background:var(--gold-lt)}
+.on-brown .sec-title{color:#FFF8F0}
+.on-brown .sec-sub{color:rgba(255,240,210,0.45)}
+
+/* ════════════════════════════
+   METRICS 4-TILE
+════════════════════════════ */
+.metrics-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+}
+.metric-tile{
+  background:var(--brown);
+  padding:36px 28px 32px;
+  position:relative;
+  overflow:hidden;
+  transition:transform .25s, box-shadow .25s;
+}
+.metric-tile:hover{
+  transform:translateY(-4px);
+  box-shadow:0 12px 40px rgba(61,50,40,0.18);
+}
+.metric-tile::before{
+  content:'';
+  position:absolute;top:0;left:0;right:0;
+  height:2px;
+  background:linear-gradient(90deg,var(--gold),var(--gold-lt));
+}
+.mt-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:3rem;font-weight:700;
+  color:var(--gold-lt);
+  line-height:1;margin-bottom:16px;
+}
+.mt-zh{
+  font-size:0.88rem;font-weight:600;
+  color:rgba(255,240,210,0.9);
+  margin-bottom:4px;
+}
+.mt-en{
+  font-size:0.7rem;
+  color:rgba(255,240,210,0.35);
+  letter-spacing:.5px;
+}
+@media(max-width:700px){
+  .metrics-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+/* ════════════════════════════
+   SKILLS
+════════════════════════════ */
+.skills-3{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:var(--border);
+  border:1px solid var(--border);
+}
+.skill-box{
+  background:var(--white);padding:32px 28px;
+  position:relative;overflow:hidden;transition:background .25s;
+}
+.skill-box:hover{background:var(--cream)}
+.skill-box::after{
+  content:'';position:absolute;
+  top:0;left:0;right:0;height:3px;
+  background:var(--gold);
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .35s;
+}
+.skill-box:hover::after{transform:scaleX(1)}
+.sb-icon{font-size:1.4rem;margin-bottom:14px}
+.sb-zh{font-size:0.92rem;font-weight:700;color:var(--brown);margin-bottom:2px}
+.sb-en{font-size:0.67rem;color:var(--gold);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px}
+.sb-desc{font-size:0.77rem;color:var(--mid);line-height:1.8}
+
+/* ════════════════════════════
+   TIMELINE WORKS
+   底色改為 stone（淺暖灰）
+════════════════════════════ */
+.works-section{background:var(--sand)}
+
+.timeline-works{display:flex;flex-direction:column}
+.tw-item{
+  display:grid;
+  grid-template-columns:90px 28px 1fr;
+  align-items:start;
+}
+.tw-date{
+  font-family:'Cormorant Garamond',serif;
+  font-size:0.9rem;font-weight:600;
+  color:var(--soft);text-align:right;
+  padding-top:22px;padding-right:18px;
+}
+.tw-line{display:flex;flex-direction:column;align-items:center}
+.tw-dot{
+  width:9px;height:9px;border-radius:50%;
+  background:var(--gold);
+  border:2px solid var(--sand);
+  margin-top:26px;flex-shrink:0;z-index:2;
+  box-shadow:0 0 0 3px rgba(184,146,42,0.2);
+}
+.tw-vline{
+  flex:1;width:1px;
+  background:var(--border);
+  margin-top:5px;
+}
+.tw-item:last-child .tw-vline{display:none}
+.tw-card{
+  margin:14px 0 18px 18px;
+  background:var(--white);
+  border:1px solid var(--border-lt);
+  border-left:2px solid var(--gold);
+  display:grid;grid-template-columns:1fr auto;
+  gap:16px;align-items:center;
+  padding:16px 20px;
+  transition:box-shadow .2s,border-left-color .2s;
+}
+.tw-card:hover{
+  box-shadow:0 4px 24px rgba(184,146,42,0.1);
+  border-left-color:var(--gold-lt);
+}
+.tw-title{
+  font-size:0.87rem;font-weight:600;
+  color:var(--brown);margin-bottom:3px;
+}
+.tw-desc{font-size:0.74rem;color:var(--soft);line-height:1.65}
+.tw-link{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:34px;height:34px;border-radius:50%;
+  background:var(--gold-bg);
+  border:1px solid rgba(184,146,42,0.3);
+  color:var(--gold);text-decoration:none;
+  font-size:0.82rem;flex-shrink:0;
+  transition:background .2s,transform .2s;
+}
+.tw-link:hover{background:var(--gold);color:var(--white);transform:scale(1.1)}
+
+/* ════════════════════════════
+   EXPERIENCE
+════════════════════════════ */
+.exp-grid{display:grid;grid-template-columns:190px 1fr;gap:0}
+.exp-item{display:contents}
+.exp-left{
+  padding:36px 28px 36px 0;
+  text-align:right;
+  border-right:1px solid var(--border);
+  position:relative;
+}
+.exp-left::after{
+  content:'';position:absolute;
+  right:-5px;top:44px;
+  width:9px;height:9px;border-radius:50%;
+  background:var(--gold);border:2px solid var(--cream);
+}
+.exp-co{
+  font-size:0.62rem;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:4px;
+}
+.exp-date{font-size:0.78rem;color:var(--soft)}
+.exp-right{
+  padding:36px 0 36px 36px;
+  border-bottom:1px solid var(--border-lt);
+}
+.exp-item:last-child .exp-right{border-bottom:none}
+.exp-role{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.35rem;font-weight:700;
+  color:var(--brown);margin-bottom:2px;
+}
+.exp-role-zh{font-size:0.82rem;color:var(--soft);margin-bottom:16px}
+.exp-bullets{display:flex;flex-direction:column;gap:8px;margin-bottom:14px}
+.exp-bullet{
+  display:flex;align-items:flex-start;gap:10px;
+  font-size:0.79rem;line-height:1.7;color:var(--mid);
+}
+.bullet-mark{color:var(--gold);flex-shrink:0;margin-top:2px;font-size:0.65rem}
+.exp-tags{display:flex;flex-wrap:wrap;gap:6px}
+.etag{
+  padding:3px 12px;
+  border:1px solid var(--border);
+  font-size:0.64rem;color:var(--soft);
+  letter-spacing:.5px;
+}
+.etag.gold{border-color:rgba(184,146,42,0.5);color:var(--gold)}
+
+/* ════════════════════════════
+   AWARDS  — 金色淡底
+════════════════════════════ */
+.awards-row{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.award-box{
+  background:var(--white);
+  padding:36px;
+  border:1px solid var(--border-lt);
+  position:relative;overflow:hidden;
+  transition:box-shadow .25s,transform .25s;
+}
+.award-box:hover{
+  box-shadow:0 8px 32px rgba(184,146,42,0.12);
+  transform:translateY(-3px);
+}
+.award-box::before{
+  content:attr(data-year);
+  position:absolute;right:16px;top:12px;
+  font-family:'Cormorant Garamond',serif;
+  font-size:3.8rem;font-weight:700;
+  color:rgba(184,146,42,0.07);
+  line-height:1;pointer-events:none;
+}
+.award-box::after{
+  content:'';position:absolute;
+  top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--gold),var(--gold-lt));
+}
+.award-icon{font-size:1.5rem;margin-bottom:14px}
+.award-zh{font-size:0.97rem;font-weight:700;color:var(--brown);margin-bottom:4px}
+.award-en{font-size:0.7rem;color:var(--gold);letter-spacing:.5px;margin-bottom:12px}
+.award-desc{font-size:0.77rem;color:var(--mid);line-height:1.8}
+
+/* ════════════════════════════
+   EDUCATION
+════════════════════════════ */
+.edu-row{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:var(--border);
+  border:1px solid var(--border);
+}
+.edu-box{
+  background:var(--white);padding:28px 24px;
+  transition:background .2s;
+}
+.edu-box:hover{background:var(--cream)}
+.edu-period{
+  font-size:0.62rem;letter-spacing:2px;
+  color:var(--gold);font-weight:700;margin-bottom:10px;
+}
+.edu-zh{font-size:0.9rem;font-weight:700;color:var(--brown);margin-bottom:2px}
+.edu-en{font-size:0.7rem;color:var(--soft);margin-bottom:6px}
+.edu-deg{font-size:0.76rem;color:var(--mid)}
+
+/* ════════════════════════════
+   CONTACT  — 沙褐底取代純黑
+════════════════════════════ */
+.contact-strip{
+  background:var(--brown);
+  padding:72px 60px;
+  display:flex;align-items:center;justify-content:space-between;gap:48px;
+}
+.contact-headline{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2rem,4vw,3rem);
+  font-weight:700;color:#FFF8F0;
+  line-height:1.2;
+}
+.contact-headline em{color:var(--gold-lt);font-style:italic}
+.contact-sub{font-size:0.82rem;color:rgba(255,240,210,0.4);margin-top:8px}
+.contact-actions{display:flex;flex-direction:column;gap:12px;min-width:260px}
+.contact-btn{
+  display:flex;align-items:center;gap:14px;
+  padding:16px 22px;
+  text-decoration:none;
+  border:1px solid rgba(255,240,210,0.12);
+  color:#FFF8F0;font-size:0.82rem;
+  transition:border-color .2s,background .2s;
+}
+.contact-btn:hover{
+  border-color:rgba(184,146,42,0.5);
+  background:rgba(184,146,42,0.08);
+}
+.contact-btn-icon{font-size:1rem;flex-shrink:0}
+.contact-btn-lbl{flex:1}
+.contact-btn-lbl-zh{font-weight:600;font-size:0.82rem}
+.contact-btn-lbl-en{font-size:0.67rem;color:rgba(255,240,210,0.3)}
+.contact-arrow{color:var(--gold-lt);opacity:.7}
+
+footer{
+  background:#2A2118;
+  padding:20px 60px;
+  display:flex;justify-content:space-between;align-items:center;
+  border-top:1px solid rgba(255,240,210,0.06);
+}
+.footer-txt{font-size:0.64rem;color:rgba(255,240,210,0.2);letter-spacing:1px}
+.footer-gold{color:var(--gold)}
+
+/* ════════════════════════════
+   ANIMATIONS — CSS only, no JS observer
+════════════════════════════ */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:none}
+}
+.reveal{animation:fadeUp .6s ease both}
+.reveal-d1{animation-delay:.1s}
+.reveal-d2{animation-delay:.2s}
+.reveal-d3{animation-delay:.3s}
+
+/* ════════════════════════════
+   LANGUAGE TOGGLE
+════════════════════════════ */
+body.lang-en .zh-only{display:none!important}
+body.lang-en .en-only{display:block!important}
+.en-only{display:none}
+.zh-only{display:block}
+span.en-only{display:none}
+body.lang-en span.en-only{display:inline!important}
+body.lang-en span.zh-only{display:none!important}
+
+/* ════════════════════════════
+   RESPONSIVE
+════════════════════════════ */
+@media(max-width:960px){
+  nav{padding:0 20px}
+  .nav-links{display:none}
+  .hero{grid-template-columns:1fr;min-height:auto}
+  .hero-left{padding:56px 24px;min-height:auto}
+  .section{padding:64px 24px}
+  .skills-3{grid-template-columns:1fr 1fr}
+  .exp-grid{grid-template-columns:100px 1fr}
+  .awards-row,.edu-row{grid-template-columns:1fr}
+  .contact-strip{flex-direction:column;padding:56px 24px}
+  footer{flex-direction:column;gap:6px;padding:20px 24px;text-align:center}
+}
+@media(max-width:600px){
+  .skills-3{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">DORIS <span>LU</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#works">Works</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="lang-toggle">
+    <button class="lang-btn active" id="btnZh">中文</button>
+    <button class="lang-btn" id="btnEn">EN</button>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero" id="about">
+  <div class="hero-left">
+    <div class="hero-tag">Integrated Marketing · 整合行銷</div>
+    <div class="hero-name">Doris Lu</div>
+    <div class="hero-name-zh">呂 慈 曾</div>
+    <p class="hero-desc zh-only">
+      5年+整合行銷媒體公關以及2年第一線營業管理經驗，橫跨零售、支付與百貨產業，具備集團視野與跨事業體實戰經驗，擅長以社群媒體、公關策略驅動品牌增長，結合數位社群、創新專案、點數生態系與實體零售洞察，打造全通路整合行銷策略。
+    </p>
+    <p class="hero-desc en-only">
+      7+ years across retail &amp; fintech — brand strategy, social media innovation, and team leadership that drives measurable business growth.
+    </p>
+  </div>
+</section>
+
+<!-- ═══ METRICS 4-TILE ═══ -->
+<section class="section metrics-section bg-cream" id="metrics">
+  <div class="sec-eyebrow reveal">At a Glance · 數字說話</div>
+  <h2 class="sec-title reveal"><span class="zh-only">關鍵數字</span><span class="en-only">Key Achievements</span></h2>
+  <p class="sec-sub reveal"><span class="zh-only">用數據說明影響力</span><span class="en-only">Impact in numbers</span></p>
+  <div class="metrics-grid reveal">
+    <div class="metric-tile">
+      <div class="mt-num">5年+</div>
+      <div class="mt-zh zh-only">行銷經驗</div>
+      <div class="mt-zh en-only">in Marketing</div>
+      <div class="mt-en zh-only">In Marketing</div>
+      <div class="mt-en en-only">Retail · Fintech · FMCG</div>
+    </div>
+    <div class="metric-tile">
+      <div class="mt-num">5人</div>
+      <div class="mt-zh zh-only">直屬團隊規模</div>
+      <div class="mt-zh en-only">Team Managed</div>
+      <div class="mt-en zh-only">Team Managed</div>
+      <div class="mt-en en-only">Integrated Marketing Team</div>
+    </div>
+    <div class="metric-tile">
+      <div class="mt-num">9%↑</div>
+      <div class="mt-zh zh-only">2025 ROI 效益成長</div>
+      <div class="mt-zh en-only">2025 ROI Growth</div>
+      <div class="mt-en zh-only">2025 ROI Growth</div>
+      <div class="mt-en en-only">icash Pay Marketing</div>
+    </div>
+    <div class="metric-tile">
+      <div class="mt-num">24場</div>
+      <div class="mt-zh zh-only">年度校園演唱會</div>
+      <div class="mt-zh en-only">Campus Concerts Led</div>
+      <div class="mt-en zh-only">Campus Concerts Led</div>
+      <div class="mt-en en-only">Nationwide · 2025</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SKILLS ═══ -->
+<section class="section" id="skills">
+  <div class="sec-eyebrow reveal">Core Skills</div>
+  <h2 class="sec-title reveal"><span class="zh-only">核心能力</span><span class="en-only">What I Do Best</span></h2>
+  <p class="sec-sub reveal"><span class="zh-only">社群 · 品牌 · 創新 · 領導</span><span class="en-only">Social · Brand · Innovation · Leadership</span></p>
+  <div class="skills-3 reveal">
+    <div class="skill-box">
+      <div class="sb-icon">👑</div>
+      <div class="sb-zh zh-only">團隊領導</div>
+      <div class="sb-zh en-only">Team Leadership</div>
+      <div class="sb-en">Team Management</div>
+      <div class="sb-desc zh-only">帶領 5 人整合行銷團隊，負責年度預算編列，統籌廣告、KOL、社群、PR 多條業務線</div>
+      <div class="sb-desc en-only">Leading a 5-person team with full annual budget ownership across media buying, influencer, social &amp; PR</div>
+    </div>
+    <div class="skill-box">
+      <div class="sb-icon">🎯</div>
+      <div class="sb-zh zh-only">品牌策略</div>
+      <div class="sb-zh en-only">Brand Strategy</div>
+      <div class="sb-en">Brand &amp; Campaign Strategy</div>
+      <div class="sb-desc zh-only">年度行銷策略、預算管控、線上線下整合，確保品牌聲量與商業目標對齊</div>
+      <div class="sb-desc en-only">Annual strategy &amp; budget ownership; integrated online/offline campaigns aligned to business KPIs</div>
+    </div>
+    <div class="skill-box">
+      <div class="sb-icon">📱</div>
+      <div class="sb-zh zh-only">社群媒體經營</div>
+      <div class="sb-zh en-only">Social Media</div>
+      <div class="sb-en">Social Media Management</div>
+      <div class="sb-desc zh-only">IG／FB／Threads／LINE 多平台統籌，AR 濾鏡設計、短影音，連續 3 年雙位數粉絲成長</div>
+      <div class="sb-desc en-only">Multi-platform management (IG, FB, Threads, LINE); AR filter design &amp; video — 3 consecutive years of double-digit growth</div>
+    </div>
+    <div class="skill-box">
+      <div class="sb-icon">🚀</div>
+      <div class="sb-zh zh-only">創新專案領導</div>
+      <div class="sb-zh en-only">Innovation Leadership</div>
+      <div class="sb-en">Innovation &amp; Project Leadership</div>
+      <div class="sb-desc zh-only">主導台灣首個百貨 NFT（12 分鐘秒殺）、24 場校園演唱會串聯社群行銷</div>
+      <div class="sb-desc en-only">Led Taiwan's first dept. store NFT (sold out in 12 min) &amp; 24-campus concert social campaigns</div>
+    </div>
+    <div class="skill-box">
+      <div class="sb-icon">🤝</div>
+      <div class="sb-zh zh-only">KOL / KOC 合作</div>
+      <div class="sb-zh en-only">Influencer Marketing</div>
+      <div class="sb-en">KOL / KOC &amp; Influencer</div>
+      <div class="sb-desc zh-only">年度合作計畫規劃執行、成效追蹤，以及 MGM 推薦口碑機制設計</div>
+      <div class="sb-desc en-only">End-to-end influencer campaigns with performance tracking &amp; MGM program design</div>
+    </div>
+    <div class="skill-box">
+      <div class="sb-icon">📢</div>
+      <div class="sb-zh zh-only">公關與媒體</div>
+      <div class="sb-zh en-only">PR &amp; Media</div>
+      <div class="sb-en">PR &amp; Media Relations</div>
+      <div class="sb-desc zh-only">媒體公關策略、年度 7 場以上大型媒體活動，提升品牌聲量</div>
+      <div class="sb-desc en-only">Media strategy &amp; 7+ annual press events boosting brand coverage during key campaigns</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WORKS TIMELINE ═══ -->
+<section class="section works-section" id="works">
+  <div class="sec-eyebrow reveal">Portfolio · 作品時間軸</div>
+  <h2 class="sec-title reveal"><span class="zh-only">精選行銷作品集</span><span class="en-only">Featured Marketing Works</span></h2>
+  <p class="sec-sub reveal"><span class="zh-only">社群創新 · AR 濾鏡 · NFT · KOL · 品牌活動</span><span class="en-only">Social Innovation · AR · NFT · KOL · Brand Campaigns</span></p>
+
+  <div class="timeline-works reveal">
+
+    <div class="tw-item">
+      <div class="tw-date">2026/01</div>
+      <div class="tw-line"><div class="tw-dot"></div><div class="tw-vline"></div></div>
+      <div class="tw-card">
+        <div>
+          <div class="tw-title zh-only">打造最強支付 · icash × uniopen</div>
+          <div class="tw-title en-only">Building the Strongest Payment · icash × uniopen</div>
+          <div class="tw-desc zh-only">整合統一集團支付生態，規劃 2026 年新權益策略</div>
+          <div class="tw-desc en-only">Integrated Uni-President payment ecosystem; 2026 benefit strategy</div>
+        </div>
+        <a href="https://tw.stock.yahoo.com/news/%E4%B8%AD%E4%BF%A1%E7%B5%B1%E4%B8%80uniopen%E5%8D%A12026%E5%B9%B4%E6%96%B0%E6%AC%8A%E7%9B%8A%E6%9B%B4%E5%A5%BD%EF%BC%81%E7%B6%B2%E5%97%A8%E3%80%8C2026%E7%A5%9E%E5%8D%A1%E3%80%8D-085358458.html" target="_blank" class="tw-link">↗</a>
+      </div>
+    </div>
+
+    <div class="tw-item">
+      <div class="tw-date">2025/11</div>
+      <div class="tw-line"><div class="tw-dot"></div><div class="tw-vline"></div></div>
+      <div class="tw-card">
+        <div>
+          <div class="tw-title zh-only">icash Pay 進入校園 · 全台 24 場演唱會</div>
+          <div class="tw-title en-only">icash Pay Campus Strategy · 24 Nationwide Concerts</div>
+          <div class="tw-desc zh-only">串聯音樂體驗與社群互動，帶動會員成長 +16%</div>
+          <div class="tw-desc en-only">Music × social engagement driving +16% membership growth among Gen Z</div>
+        </div>
+        <a href="https://www.youtube.com/watch?v=IVZ3ZGI3mR0" target="_blank" class="tw-link">↗</a>
+      </div>
+    </div>
+
+
+
+    <div class="tw-item">
+      <div class="tw-date">2024/07</div>
+      <div class="tw-line"><div class="tw-dot"></div><div class="tw-vline"></div></div>
+      <div class="tw-card">
+        <div>
+          <div class="tw-title zh-only">林襄玩點不一樣 · 形象宣傳影片</div>
+          <div class="tw-title en-only">Lin Xiang Campaign · Brand Image Film</div>
+          <div class="tw-desc zh-only">品牌大使形象影片，展現 icash Pay 年輕化品牌個性</div>
+          <div class="tw-desc en-only">Brand ambassador image film showcasing icash Pay's youthful brand identity</div>
+        </div>
+        <a href="https://www.instagram.com/reel/C9jNTGEvcrz/?igsh=MWI2ajkyano1MzlnNw==" target="_blank" class="tw-link">↗</a>
+      </div>
+    </div>
+
+    <div class="tw-item">
+      <div class="tw-date">2024/07</div>
+      <div class="tw-line"><div class="tw-dot"></div><div class="tw-vline"></div></div>
+      <div class="tw-card">
+        <div>
+          <div class="tw-title zh-only">林襄玩點不一樣 · 品牌形象大使企劃</div>
+          <div class="tw-title en-only">Lin Xiang Campaign · Brand Ambassador Strategy</div>
+          <div class="tw-desc zh-only">規劃 icash Pay 品牌形象大使企劃，媒體報導擴散</div>
+          <div class="tw-desc en-only">icash Pay brand ambassador initiative; earned media coverage &amp; buzz</div>
+        </div>
+        <a href="https://www.ctee.com.tw/news/20240719701253-430303" target="_blank" class="tw-link">↗</a>
+      </div>
+    </div>
+
+    <div class="tw-item">
+      <div class="tw-date">2024/02</div>
+      <div class="tw-line"><div class="tw-dot"></div><div class="tw-vline"></div></div>
+      <div class="tw-card">
+        <div>
+          <div class="tw-title zh-only">首發百貨龍年 GIF 互動貼紙</div>
+          <div class="tw-title en-only">First Dept. Store Dragon Year GIF Stickers</div>
+          <div class="tw-desc zh-only">首創百貨節慶 GIF 互動貼紙，引爆農曆新年社群話題</div>
+          <div class="tw-desc en-only">First-of-its-kind retail GIF sticker for Lunar New Year social engagement</div>
+        </div>
+        <a href="https://www.instagram.com/p/C3FhcUgPfv6/?img_index=1" target="_blank" class="tw-link">↗</a>
+      </div>
+    </div>
+
+    <div class="tw-item">
+      <div class="tw-date">2023/11</div>
+      <div class="tw-line"><div class="tw-dot"></div><div class="tw-vline"></div></div>
+      <div class="tw-card">
+        <div>
+          <div class="tw-title zh-only">首創百貨 DM 結合 AR 濾鏡</div>
+          <div class="tw-title en-only">First Retail Catalog × AR Filter Integration</div>
+          <div class="tw-desc zh-only">紙本 DM 掃描即啟動 AR 濾鏡，虛實整合創新體驗</div>
+          <div class="tw-desc en-only">Scan print DM to trigger AR — phygital innovation first</div>
+        </div>
+        <a href="https://www.facebook.com/uniustyle/posts/%E9%82%80%E8%AB%8B%E6%82%A8%E5%92%8C%E6%84%9Bsharing%E8%9D%B4%E8%9D%B6%E4%B8%80%E8%B5%B7%E6%B5%AA%E6%BC%AB%E5%85%B1%E8%88%9E-%E6%9C%89%E3%84%94%E3%84%90%E8%B6%85%E7%B2%BE%E7%B7%BB%E8%B6%85%E5%A4%A2%E5%B9%BB%E7%9A%84ar%E6%BF%BE%E9%8F%A1%E7%AD%89%E4%BD%A0%E4%BE%86%E9%AB%94%E9%A9%97%E6%BF%BE%E9%8F%A1%E9%80%A3%E7%B5%90%E9%BB%9E%E9%80%99%E9%82%8Ahttpsreurlcc0zgdn91117-%E4%BA%94-1800-%E6%B5%AA%E6%BC%AB%E5%B9%B8/734286642066395/" target="_blank" class="tw-link">↗</a>
+      </div>
+    </div>
+
+    <div class="tw-item">
+      <div class="tw-date">2023/09</div>
+      <div class="tw-line"><div class="tw-dot"></div><div class="tw-vline"></div></div>
+      <div class="tw-card">
+        <div>
+          <div class="tw-title zh-only">合作迪士尼 · 遊戲 AR 濾鏡</div>
+          <div class="tw-title en-only">Disney Collaboration · Interactive AR Game Filter</div>
+          <div class="tw-desc zh-only">與迪士尼 IP 聯名互動遊戲濾鏡，提升社群互動率</div>
+          <div class="tw-desc en-only">Disney IP x retail AR game filter driving social engagement</div>
+        </div>
+        <a href="https://www.instagram.com/p/Cxb9GcHPHDN/?img_index=1" target="_blank" class="tw-link">↗</a>
+      </div>
+    </div>
+
+    <div class="tw-item">
+      <div class="tw-date">2023/05</div>
+      <div class="tw-line"><div class="tw-dot"></div><div class="tw-vline"></div></div>
+      <div class="tw-card">
+        <div>
+          <div class="tw-title zh-only">告白互動 AR 濾鏡</div>
+          <div class="tw-title en-only">Love Confession Interactive AR Filter</div>
+          <div class="tw-desc zh-only">節慶主題互動濾鏡，帶動用戶主動分享與擴散</div>
+          <div class="tw-desc en-only">Seasonal AR filter driving organic user-generated sharing</div>
+        </div>
+        <a href="https://www.instagram.com/p/CrsFNFQvixQ/?utm_source=ig_web_copy_link" target="_blank" class="tw-link">↗</a>
+      </div>
+    </div>
+
+    <div class="tw-item">
+      <div class="tw-date">2023/02</div>
+      <div class="tw-line"><div class="tw-dot"></div><div class="tw-vline"></div></div>
+      <div class="tw-card">
+        <div>
+          <div class="tw-title zh-only">合作樂高 · 線上賞燈 AR 濾鏡</div>
+          <div class="tw-title en-only">LEGO Collaboration · Lantern Festival AR Filter</div>
+          <div class="tw-desc zh-only">農曆元宵節與樂高聯名，線上賞燈 AR 虛實整合體驗</div>
+          <div class="tw-desc en-only">LEGO x Lantern Festival — phygital AR seasonal experience</div>
+        </div>
+        <a href="https://www.facebook.com/uniustyle/posts/%E9%80%99%E9%BA%BC%E5%A5%BD%E7%8E%A9%E4%B8%8D%E8%83%BD%E5%8F%AA%E6%9C%89%E5%B0%8F%E7%B7%A8%E7%9F%A5%E9%81%93%E7%9B%B8%E7%B4%84%E4%BE%86%E7%B5%B1%E4%B8%80%E6%99%82%E4%BB%A3-%E8%B3%9E%E7%87%88%E5%85%94%E7%B5%A6%E6%A8%82%E8%B3%9E%E7%87%88%E5%85%94%E7%B5%A6%E6%A8%82together%E5%8D%B3%E6%97%A5%E8%B5%B72192%E7%B5%B1%E4%B8%80%E6%99%82%E4%BB%A3%E7%99%BE%E8%B2%A8%E5%8F%B0%E5%8C%97%E5%BA%971f%E5%BF%A0%E5%AD%9D%E6%9D%B1%E8%B7%AF%E5%A4%A7%E9%96%802f%E5%A4%A2%E5%BB%A3%E5%A0%B4%E8%8A%B1%E9%90%98%E6%97%A5%E5%A4%9C%E7%89%B9%E6%95%88%E6%99%82%E6%AE%B5%EF%B8%8F%E7%99%BD%E5%A4%A9%E7%89%8806/8738249486217199/" target="_blank" class="tw-link">↗</a>
+      </div>
+    </div>
+
+    <div class="tw-item">
+      <div class="tw-date">2022/11</div>
+      <div class="tw-line"><div class="tw-dot"></div><div class="tw-vline"></div></div>
+      <div class="tw-card">
+        <div>
+          <div class="tw-title zh-only">首創百貨 NFT · 雪鈴兔波波 — 12 分鐘秒殺</div>
+          <div class="tw-title en-only">Taiwan's First Dept. Store NFT · Sold Out in 12 Min</div>
+          <div class="tw-desc zh-only">百貨 IP 設計／賦能／鑄造／兌領，3 款全數秒殺，業界首例</div>
+          <div class="tw-desc en-only">IP design, minting &amp; redemption — 3 collections sold out in 12 min, a retail first</div>
+        </div>
+        <a href="https://www.instagram.com/p/ClC5sT1PE_W/?img_index=1" target="_blank" class="tw-link">↗</a>
+      </div>
+    </div>
+
+    <div class="tw-item">
+      <div class="tw-date">2022/08</div>
+      <div class="tw-line"><div class="tw-dot"></div><div class="tw-vline"></div></div>
+      <div class="tw-card">
+        <div>
+          <div class="tw-title zh-only">美妝學院 AR 濾鏡</div>
+          <div class="tw-title en-only">Beauty Academy AR Filter</div>
+          <div class="tw-desc zh-only">美妝品牌聯名互動試妝 AR 體驗，獲媒體報導擴散</div>
+          <div class="tw-desc en-only">Virtual try-on AR filter with beauty brands; earned media coverage</div>
+        </div>
+        <a href="https://www.styletc.com/article/199919?utm_source=linehk&utm_medium=rss&utm_campaign=199919" target="_blank" class="tw-link">↗</a>
+      </div>
+    </div>
+
+    <div class="tw-item">
+      <div class="tw-date">2022/05</div>
+      <div class="tw-line"><div class="tw-dot"></div><div class="tw-vline"></div></div>
+      <div class="tw-card">
+        <div>
+          <div class="tw-title zh-only">舞蹈主題品牌影片</div>
+          <div class="tw-title en-only">Dance-Themed Brand Video</div>
+          <div class="tw-desc zh-only">企劃舞蹈主題品牌影片，打造百貨活力年輕形象</div>
+          <div class="tw-desc en-only">Dance-themed brand video campaign to build a youthful brand image</div>
+        </div>
+        <a href="https://www.instagram.com/p/CeDFMZ6ApPg/" target="_blank" class="tw-link">↗</a>
+      </div>
+    </div>
+
+    <div class="tw-item">
+      <div class="tw-date">2022/03</div>
+      <div class="tw-line"><div class="tw-dot"></div><div class="tw-vline"></div></div>
+      <div class="tw-card">
+        <div>
+          <div class="tw-title zh-only">百貨首創濾鏡遊戲</div>
+          <div class="tw-title en-only">First Dept. Store AR Game Filter</div>
+          <div class="tw-desc zh-only">業界首創百貨互動濾鏡遊戲，開啟社群玩法新局</div>
+          <div class="tw-desc en-only">Pioneered the first interactive AR game filter in Taiwan's retail sector</div>
+        </div>
+        <a href="https://www.instagram.com/stories/highlights/18153838366240513/" target="_blank" class="tw-link">↗</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ EXPERIENCE ═══ -->
+<section class="section bg-cream" id="experience">
+  <div class="sec-eyebrow reveal">Experience · 工作經歷</div>
+  <h2 class="sec-title reveal"><span class="zh-only">職涯經歷</span><span class="en-only">Career</span></h2>
+  <p class="sec-sub reveal"><span class="zh-only">金融科技 · 百貨零售 · 消費品</span><span class="en-only">Fintech · Retail · FMCG</span></p>
+
+  <div class="exp-grid reveal">
+
+    <div class="exp-item">
+      <div class="exp-left">
+        <div class="exp-co">icash Corp.</div>
+        <div class="exp-date">2024.05 — Now</div>
+      </div>
+      <div class="exp-right">
+        <div class="exp-role">Integrated Marketing &amp; PR Manager</div>
+        <div class="exp-role-zh zh-only">整合行銷暨公關主管 · 帶領 5 人團隊</div>
+        <div class="exp-role-zh en-only">Team of 5 · icash / Uni-President Group</div>
+        <div class="exp-bullets">
+          <div class="exp-bullet"><span class="bullet-mark">✦</span><span class="zh-only">品牌策略、預算規劃管控，2025 行銷效益成長 9%、交易達成率 109%</span><span class="en-only">Brand strategy &amp; budget management; 9% ROI growth, 109% transaction rate in 2025</span></div>
+          <div class="exp-bullet"><span class="bullet-mark">✦</span><span class="zh-only">主導全台 24 場校園演唱會，帶動會員成長 16%</span><span class="en-only">Led 24 nationwide campus concerts; drove 16% membership growth</span></div>
+          <div class="exp-bullet"><span class="bullet-mark">✦</span><span class="zh-only">統籌廣告投放、KOL/KOC、MGM、口碑行銷與異業合作</span><span class="en-only">Managed media buying, KOL/KOC, MGM programs &amp; cross-industry partnerships</span></div>
+        </div>
+        <div class="exp-tags">
+          <span class="etag gold">Brand Strategy</span>
+          <span class="etag gold">Team Lead</span>
+          <span class="etag">Social Media</span><span class="etag">KOL/KOC</span><span class="etag">PR</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-left">
+        <div class="exp-co">統一時代百貨</div>
+        <div class="exp-date">2021 — 2024</div>
+      </div>
+      <div class="exp-right">
+        <div class="exp-role">Social Media &amp; PR Executive</div>
+        <div class="exp-role-zh zh-only">公關暨社群專員</div>
+        <div class="exp-role-zh en-only">Uni-President Dept. Store / Dream Plaza</div>
+        <div class="exp-bullets">
+          <div class="exp-bullet"><span class="bullet-mark">✦</span><span class="zh-only">IG 粉絲連續 3 年雙位數成長；AR 濾鏡、GIF 貼紙、年產 30+ 支影片</span><span class="en-only">3 years double-digit IG growth; AR filters, GIF stickers &amp; 30+ videos annually</span></div>
+          <div class="exp-bullet"><span class="bullet-mark">✦</span><span class="zh-only">主導台灣首個百貨 NFT，3 款 12 分鐘全數秒殺</span><span class="en-only">Pioneered Taiwan's first dept. store NFT — 3 collections sold out in 12 min</span></div>
+          <div class="exp-bullet"><span class="bullet-mark">✦</span><span class="zh-only">年度 7 場以上大型媒體活動，提升母親節、週年慶媒體曝光</span><span class="en-only">7+ annual media events boosting key campaign press coverage</span></div>
+        </div>
+        <div class="exp-tags">
+          <span class="etag gold">IG Growth</span>
+          <span class="etag gold">NFT Innovation</span>
+          <span class="etag">AR Filter</span><span class="etag">Video</span><span class="etag">PR</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-left">
+        <div class="exp-co">統一時代百貨</div>
+        <div class="exp-date">2019 — 2021</div>
+      </div>
+      <div class="exp-right">
+        <div class="exp-role">Sales Executive</div>
+        <div class="exp-role-zh zh-only">營業專員（化妝品 × 餐飲）</div>
+        <div class="exp-role-zh en-only">Cosmetics &amp; F&amp;B Concessions</div>
+        <div class="exp-bullets">
+          <div class="exp-bullet"><span class="bullet-mark">✦</span><span class="zh-only">專櫃管理、顧客關係、業績分析，廠商人脈與異業合作洽談</span><span class="en-only">Concession management, CRM, sales analysis &amp; cross-brand collaborations</span></div>
+        </div>
+        <div class="exp-tags"><span class="etag">Sales</span><span class="etag">CRM</span><span class="etag">B2B</span></div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-left">
+        <div class="exp-co">統一集團</div>
+        <div class="exp-date">2018 — 2019</div>
+      </div>
+      <div class="exp-right">
+        <div class="exp-role">Management Trainee</div>
+        <div class="exp-role-zh zh-only">儲備幹部 · 台灣 / 泰國 / 中國輪調</div>
+        <div class="exp-role-zh en-only">Uni-President Group · TW / TH / CN Rotation</div>
+        <div class="exp-bullets">
+          <div class="exp-bullet"><span class="bullet-mark">✦</span><span class="zh-only">各 BU 輪調 7 個月，後晉升調任 icash Team 主管</span><span class="en-only">7-month cross-BU rotation; later promoted to icash Team Manager</span></div>
+        </div>
+        <div class="exp-tags"><span class="etag">Leadership Dev.</span><span class="etag">International</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ AWARDS ═══ -->
+<section class="section bg-gold-tint" id="awards">
+  <div class="sec-eyebrow reveal">Awards · 獲獎</div>
+  <h2 class="sec-title reveal"><span class="zh-only">榮耀紀錄</span><span class="en-only">Recognition</span></h2>
+  <p class="sec-sub reveal" style="color:var(--mid)"><span class="zh-only">創新 · 策略 · 全球舞台</span><span class="en-only">Innovation · Strategy · Global Stage</span></p>
+  <div class="awards-row reveal">
+    <div class="award-box" data-year="2024">
+      <div class="award-icon">🥉</div>
+      <div class="award-zh zh-only">創新商務獎 最佳商模創新 銅獎</div>
+      <div class="award-zh en-only">Future Commerce Award 2024 — Bronze</div>
+      <div class="award-en">Best Business Model Innovation · icash Pay</div>
+      <div class="award-desc zh-only">以情境式應用創新金融整合服務，涵蓋支付、投資、保險、基金及逾 7,900 項繳費項目</div>
+      <div class="award-desc en-only">Scenario-based financial super-app covering payment, investment, insurance &amp; 7,900+ bill items</div>
+    </div>
+    <div class="award-box" data-year="2016">
+      <div class="award-icon">🏆</div>
+      <div class="award-zh zh-only">L'Oréal Brandstorm 台灣冠軍 · 全球決賽</div>
+      <div class="award-zh en-only">L'Oréal Brandstorm — Taiwan Champion · Global Finals</div>
+      <div class="award-en">Paris Global Finals 2016 · NCCU Representative</div>
+      <div class="award-desc zh-only">代表政大贏得台灣冠軍，赴巴黎參與全球決賽，針對 LA ROCHE-POSAY 提出創意數位行銷策略</div>
+      <div class="award-desc en-only">Won Taiwan national finals; competed in Paris. Developed full digital strategy for LA ROCHE-POSAY</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ EDUCATION ═══ -->
+<section class="section">
+  <div class="sec-eyebrow reveal">Education · 學歷</div>
+  <h2 class="sec-title reveal"><span class="zh-only">求學歷程</span><span class="en-only">Education</span></h2>
+  <p class="sec-sub reveal"><span class="zh-only">政大 · 北大 · 台北商業大學</span><span class="en-only">NCCU · PKU · NTUB</span></p>
+  <div class="edu-row reveal">
+    <div class="edu-box">
+      <div class="edu-period">2015 — 2017</div>
+      <div class="edu-zh zh-only">國立政治大學</div>
+      <div class="edu-zh en-only">National Cheng Chi University</div>
+      <div class="edu-en">NCCU · Taiwan</div>
+      <div class="edu-deg zh-only">碩士 · 國際經營與貿易</div>
+      <div class="edu-deg en-only">M.S. International Business</div>
+    </div>
+    <div class="edu-box">
+      <div class="edu-period">2017 Spring</div>
+      <div class="edu-zh zh-only">北京大學</div>
+      <div class="edu-zh en-only">Peking University</div>
+      <div class="edu-en">PKU · China</div>
+      <div class="edu-deg zh-only">碩士交換 · 經濟學院</div>
+      <div class="edu-deg en-only">Exchange · School of Economics</div>
+    </div>
+    <div class="edu-box">
+      <div class="edu-period">2011 — 2015</div>
+      <div class="edu-zh zh-only">國立台北商業大學</div>
+      <div class="edu-zh en-only">Taipei University of Business</div>
+      <div class="edu-en">NTUB · Taiwan</div>
+      <div class="edu-deg zh-only">學士 · 國際商務</div>
+      <div class="edu-deg en-only">B.S. International Business</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT ═══ -->
+<div class="contact-strip" id="contact">
+  <div>
+    <div class="contact-headline zh-only">一起做有影響力的<br><em>行銷</em></div>
+    <div class="contact-headline en-only">Let's create marketing<br>that <em>moves</em> people.</div>
+    <div class="contact-sub zh-only">Let's create marketing that moves people.</div>
+  </div>
+  <div class="contact-actions">
+    <a href="mailto:doris520123@gmail.com" class="contact-btn">
+      <span class="contact-btn-icon">✉️</span>
+      <div class="contact-btn-lbl">
+        <div class="contact-btn-lbl-zh zh-only">電子郵件聯繫</div>
+        <div class="contact-btn-lbl-zh en-only">Send an Email</div>
+        <div class="contact-btn-lbl-en">doris520123@gmail.com</div>
+      </div>
+      <span class="contact-arrow">→</span>
+    </a>
+</div>
+
+<footer>
+  <div class="footer-txt">© 2025 <span class="footer-gold">Doris Lu</span> · 呂慈曾 · Portfolio</div>
+  <div class="footer-txt">Taipei, Taiwan</div>
+</footer>
+
+<script>
+(function() {
+  function setLang(lang) {
+    document.body.className = lang === 'en' ? 'lang-en' : '';
+    document.getElementById('btnZh').classList.toggle('active', lang === 'zh');
+    document.getElementById('btnEn').classList.toggle('active', lang === 'en');
+  }
+  document.getElementById('btnZh').addEventListener('click', function() { setLang('zh'); });
+  document.getElementById('btnEn').addEventListener('click', function() { setLang('en'); });
+})();
+</script>
+</body>
+</html>
